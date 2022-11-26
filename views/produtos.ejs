@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Produtos em Destaque</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/produtos-destaque.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <script src="js/main.js" defer type="text/javascript"></script>
+</head>
+    
+<body>
+    
+    <%- include('./partials/navbar') %>
+    
+<div id="home"></div>
+      <!--conteudo principal-->
+   
+      <section id="produto-Destaque">
+        
+        <!-- conteudo produto em destaque -->
+        
+        <div id="fotos-produto">
+            <div class="slider">
+                <div class="slides">
+                    <!-- radios -->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <!-- fim radio -->
+                    <div class="slide first" id="img1"></div>
+                    <div class="slide " id="img2"></div>
+                    <div class="slide " id="img3"></div>
+        
+                  
+                </div>
+        
+                <div class="manual-navgation">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                </div>
+                
+            </div>
+        
+        </div>
+    </section>
+  <header id="produto">
+
+  </header>
+
+      <!-- imagens do produto -->
+      
+    <section id="produto-destaque">
+ 
+        <h1 id="titulo-produto">Os melhores produtos na área da sáude</h1>
+        
+        <p id="subtitulo-produto">Confira os produtos mais vendidos.</p>
+        
+        <div id="local-produto">
+            <div class="org1">
+                <% for(let i = 0; i < 4; i++){ %>
+                    <div>
+                        <a  href="descricao-produto/<%= products[i].id %>">
+                        <img src="/images/<%= products[i].imagem %> " alt="<%= products[i].nome %>">
+                        </a>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </section>
+    
+    <section id="nosso-produto">
+        <h1>Confira Nossos Produtos</h1>
+        <p>Produtos em Promoção</p>
+
+        <div id="local-produto">
+            <div id="local-org1">
+                <!-- ------------------- INSERE ELEMENTOS DINAMICAMENTE NA SESSÃO "CONFIRA NOSSOS PRODUTOS"------------- -->
+
+                <% products.forEach((product) => { %> 
+                    <div class="prof">
+                        <div class="back-image">
+                            <a href="descricao-produto/<%= product.id %>" title="<%= product.nome %>"><img src="/images/<%= product.imagem %>" alt="<%= product.nome %>"></a>
+                        </div>
+                        <div class="dados">
+                            <p class="name"><%= product.nome %></p>
+                            <p class="Categoria">R$ <%= product.preco %></p>
+                            <p class="descrição"><%= product.previaDescricao %></p>
+                                <a  href="descricao-produto/<%= product.id %>">
+                                    <input type="button" id="buttomW" value="Comprar agora" font-size='12px'>
+                                </a>
+                        </div>
+                    </div> 
+                <% }) %> 
+            </div>
+        </div>
+    </section>
+
+     <!--  Section "Estatísticas" -->
+
+<div class=" consult-azul-aqua-md ">
+    <div class="consult-container container consult-row consult-center consult-padding-64">
+     
+        <div class="consult-quarter">
+        <span class="consult-xxlarge">+de 1500</span>
+        <br>Parceiros
+      
+    </div>
+      
+      <div class="consult-quarter">
+        <span class="consult-xxlarge">99%</span>
+        <br>Pessoas atendidas em menos de 24 horas
+      
+    </div>
+      
+      <div class="consult-quarter">
+        <span class="consult-xxlarge">27</span>
+        <br>Presente em todos os Estados Brasileiros
+     
+    </div>
+     
+      <div class="consult-quarter">
+        <span class="consult-xxlarge">+100.000</span>
+        <br>Usuários
+      
+    </div>
+    </div>
+  </div>
+
+  <%- include('./partials/contato') %>
+
+  <%- include('./partials/footer') %>
+  
+</body>
+
+</html>

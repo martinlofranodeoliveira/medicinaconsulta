@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Grupo 01 PI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/painel-usuario.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+<script src="js/main.js"  defer type="text/javascript"></script>
+</head>
+
+<body>
+    <%- include('./partials/navbar') %>
+<div id="home"></div>
+    <header>
+        <div id="space-advertising">
+            <a href="#">ESPAÇO PARA PROPAGANDA TERCEIROS</a>
+        </div>
+    </header> 
+    
+    <section id="container-general">
+
+        <div class="container1">
+
+            <div class="menu-sup">
+                
+                <div class="img1"><img src="./images/avatar/<%= userLogged.avatar %>" ></div>
+               
+                <div class="sup-item"><a href="#"> <%= userLogged.nome %> </a></div>
+               
+                <div class="sup-item"><a href="#"> <%= userLogged.id %>  </a></div>
+                
+                <div class="sup-item"><a href="#"> Platinum </a></div>
+            </div>
+
+            <div class="menu-inf">
+                
+                <div class="perfil">
+                    <div><img src="./images/icone-formulario.png"></div>
+                    
+                    <div><a href="#">Perfil</a></div>
+                </div>
+                <br>
+                <div class="planos">
+                    <div><img src="./images/estrela.png"></div>
+                
+                    <div><a href="#">Meus Planos</a></div>
+                </div>
+                <br>
+              
+                <div class="chat">
+                    <div><img src="./images/icone-chat.png"></div>
+                    
+                    <div><a href="#">Chat</a></div>
+                </div>
+            </div>
+
+        </div> 
+
+        <div class="container2">
+            <div class="container-color">
+                <div class="bloc-search">
+                    <form action="#" method="post">
+                        <input type="text" name="search" id="search" placeholder="O que você precisa hoje?" required>
+
+                        <button id="lupa" type="submit"><i><img src="./images/icone-lupa.png" ></i></button> <!--Colocar icone de lupa--->
+                    </form>
+                </div>
+
+                <div class="container-consult">  
+                    <div id="consult-panel">Histórico de consultas</div>
+        
+                    <div class="container-hist">
+                        <div class="consult-hist"><a class="letra" href="#">Data última <br> consulta</a></div>
+
+                        <div class="consult-hist"><a class="letra" href="#">Data próxima <br> consulta</a></div>
+                    </div> 
+                </div>    
+            </div>
+            <div class="container-consult-inf">
+                <div class="bloc">
+
+                    <div class="token">
+                        <div class="spn-img"> Imagem / Icone </div>
+                        <h5 class="letra">Token de Atendimento</h5>
+                        <div class="contBot"><button class="bot">Acessar</button></div>
+                    </div> 
+
+                    <br>
+
+                    <div class="cancela">
+                        <div class="spn-img"> Imagem / Icone </div>
+                        <h5 class="letra">Cancelamento de Consulta</h5>
+                        <div class="contBot"><button>Cancelar</button></div>
+                    </div>
+                </div>
+
+                <div class="bloc">
+
+                    <div class="avalie">
+                        <div class="spn-img"> Imagem / Icone </div>
+                        <h5 class="letra">Avalie sua consulta</h5>
+                        <div class="contBot"><button class="bot">Acessar</button></div>
+                    </div> 
+
+                    <br>
+
+                    <div class="solic">
+                        <div class="spn-img"> Imagem / Icone </div>
+                        <h5 class="letra">Solicitação de Documentos Médicos</h5>
+                        <div class="contBot"><button class="bot">Acessar</button></div>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        <div class="container3">
+            <div class="container-publi">
+                <div class="publi-item">
+                    <h3 class="letraPub">Ofertas do dia <br> produtos</h3>
+                </div>
+                <div class="publi-item">
+                    <h3 class="letraPub">Ofertas do dia <br> parceiros</h3>
+                </div>
+            </div>
+
+
+            <div class="container-publi-inf">
+                <div class="bloc">
+
+                    <div class="agend">
+                        <div class="spn-img"> Imagem / Icone </div>
+                        <h5 class="letra">Agendamento de Exames</h5>
+                        <div class="contBot"><button class="bot">Acessar</button></div>
+                    </div> 
+
+                    <br>
+
+                    <div class="prontu">
+                        <div class="spn-img"> Imagem / Icone </div>
+                        <h5 class="letra">Prontuário Médico</h5>
+                        <div class="contBot"><button class="bot">Acessar</button></div>
+                    </div>
+            
+                </div>
+
+                <div class="bloc">
+
+                    <div class="cancela">
+                        <div class="spn-img"> Imagem / Icone </div>
+                        <h5 class="letra">Cancelamento de Exames</h5>
+                        <div class="contBot"><button class="bot">Cancelar</button></div>
+                    </div> 
+
+                    <br>
+
+                    <div class="art">
+                        <div class="spn-img"> Imagem / Icone </div>
+                        <h5 class="letra">Artigos Médicos</h5>
+                        <div class="contBot"><button class="bot">Saiba mais</button></div>
+                    </div>
+        
+            </div>
+
+        </div>
+            
+    </section>
+<%- include('./partials/footer') %>
+</body>
+</html>
